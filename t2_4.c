@@ -12,9 +12,9 @@ long long power(int a, int b){
 }
 
 double str2double (char str[STR_LEN]){
-	bool isMantissa = false;
-	bool isExponenta = false;
-	bool isExponentaPositive = true;
+	int isMantissa = 0;
+	int isExponenta = 0;
+	int isExponentaPositive = 1;
 	double res = 0;
 	int mantissaCount = 1;
 	int exponentaPower = 0;
@@ -25,12 +25,12 @@ double str2double (char str[STR_LEN]){
 			break;
 		}
 		if (str[i] == '.'){
-			isMantissa = true;
+			isMantissa = 1;
 			continue;
 		}
 		if ((str[i] == 'e') || (str[i] == 'E')){
 			i++;
-			isExponenta = true;
+			isExponenta = 1;
 			break;
 		}
 		if (!isMantissa){
@@ -44,7 +44,7 @@ double str2double (char str[STR_LEN]){
 	if (isExponenta){
 
 		if (str[i] == '-'){
-			isExponentaPositive = false;
+			isExponentaPositive = 1;
 			i++;
 		}
 		if (str[i] == '+'){
