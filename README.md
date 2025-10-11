@@ -22,13 +22,15 @@ file: t2_3.c
 The iterative method turned out to be many times faster than the recursive one.
 Example:
 ```
-Calculate 40'th of the Fibonacci sequence
-Recursive way:	102334155	Time: 851146 	microsec
-Iterative way: 	102334155	Time: 1 	microsec
-
-Calculate 50'th of the Fibonacci sequence
-Recursive way:	12586269025	Time: 79053670 	microsec
-Iterative way: 	12586269025	Time: 1 	microsec
+10
+Iterative way: 	55	Time: 15 	microsec
+Recursive way:	55	Time: 2 	microsec
+30
+Iterative way: 	832040	Time: 5 	microsec
+Recursive way:	832040	Time: 7268 	microsec
+50
+Iterative way: 	12586269025	Time: 7 	microsec
+Recursive way:	12586269025	Time: 76330920 	microsec
 ```
 ## Problem 4
 file: t2_4.c

@@ -25,18 +25,16 @@ int main(){
 	int n;
 	clock_t iterativeStart, iterativeEnd, recursiveStart, recursiveEnd;
 	
-	while (scanf("%d", &n) != EOF){
-		recursiveStart = clock();
-		printf("%lld\n", recursiveFibonachi(n));
-		recursiveEnd = clock();		
-		/*printf("\tTime: %.10g \tmicrosec\n", 1000000 * ((double) (recursiveEnd- recursiveStart) / CLOCKS_PER_SEC));*/
-
-
+	while (scanf("%d", &n) != EOF){	
 		iterativeStart = clock();
-		printf("%lld\n", iterativeFibonachi(n));
+		printf("Iterative way: \t%lld", iterativeFibonachi(n));
 		iterativeEnd = clock();
-		/*printf("\tTime: %.10g \tmicrosec\n", 1000000 * ((double) (iterativeEnd- iterativeStart) / CLOCKS_PER_SEC));*/
-		
+		printf("\tTime: %.10g \tmicrosec\n", 1000000 * ((double) (iterativeEnd- iterativeStart) / CLOCKS_PER_SEC));
+
+		recursiveStart = clock();
+		printf("Recursive way:\t%lld", recursiveFibonachi(n));
+		recursiveEnd = clock();		
+		printf("\tTime: %.10g \tmicrosec\n", 1000000 * ((double) (recursiveEnd- recursiveStart) / CLOCKS_PER_SEC));
 			}
 
 	return 0;
