@@ -12,7 +12,8 @@ long long power(int a, int b){
 }
 
 double str2double (char str[STR_LEN]){
-	int isMantissa = 0;
+	int sign = 1;
+    int isMantissa = 0;
 	int isExponenta = 0;
 	int isExponentaPositive = 1;
 	double res = 0;
@@ -20,6 +21,13 @@ double str2double (char str[STR_LEN]){
 	int exponentaPower = 0;
 	int i = 0;
 	for (; i < STR_LEN; i++){
+        if (str[i] == '+'){
+            continue;
+        }
+        if (str[i] == '-'){
+            sign = -1;
+            continue;
+        }
 		
 		if (str[i] == '\0'){
 			break;
@@ -60,7 +68,7 @@ double str2double (char str[STR_LEN]){
 		else
 			res = res / (double)power(10, exponentaPower);
 	}
-	return res;
+	return sign*res;
 }
 
 int main(){
