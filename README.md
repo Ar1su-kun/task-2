@@ -3,7 +3,7 @@
 file: t2_1.c
 ### functions: 
 1) double my_abs(double op)
-2) double horner_root(double num, double eps)
+2) double newton_root(double num, double eps)
 ## Problem 2.1
 file: t2_2_1.c
 Horner method of calculating polynomial
