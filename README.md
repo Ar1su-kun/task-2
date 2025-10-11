@@ -20,7 +20,7 @@ file: t2_3.c
 2) long long recursiveFibonachi( int n)
 ### Time
 The iterative method turned out to be many times faster than the recursive one.
-for example:
+Example:
 ```
 Calculate 40'th of the Fibonacci sequence
 Recursive way:	102334155	Time: 851146 	microsec
@@ -38,9 +38,9 @@ file: t2_4.c
 ### str2double
 #### variables
 1) int sign - ('+' = 1, '-' = -1)
-2) int isMantissa - flag is caret after '.'
-3) int isExponenta - flag is caret after 'E'
-4) int isExponentaPositive - flag
+2) int isMantissa - is caret after '.' flag
+3) int isExponenta - is caret after 'E' flag
+4) int isExponentaPositive - exponenta sign flag
 5) double res - result
 6) int mantissaCount - counter of numbers after '.'
 7) int exponentaPower - counter of numbers after 'E'
