@@ -1,20 +1,20 @@
 # Task2
 ## Problem 1
-file: t2_1.c
+file: [t2_1.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_1.c)
 ### functions: 
 1) double my_abs(double op)
 2) double newton_root(double num, double eps)
 ## Problem 2.1
-file: t2_2_1.c
+file: [t2_2_1.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_2_1.c)
 Horner method of calculating polynomial
 ## Problem 2.2
-file: t2_2_2.c
+file: [t2_2_2.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_2_2.c)
 Horner method of calculating derivative
 ## Problem 2.3
-file: t2_2_3.c
+file: [t2_2_3.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_2_3.c)
 Horner method of calculating antiderivative (integral)
 ## Problem 3
-file: t2_3.c
+file: [t2_3.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_3.c)
 ### functions: 
 1) long long iterativeFibonachi(int n)
 2) long long recursiveFibonachi( int n)
@@ -33,7 +33,7 @@ Iterative way: 	12586269025	Time: 7 	microsec
 Recursive way:	12586269025	Time: 76330920 	microsec
 ```
 ## Problem 4
-file: t2_4.c
+file: [t2_4.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_4.c)
 ### functions: 
 1) long long power(int a, int b)
 2) double str2double (char str[STR_LEN])
@@ -57,9 +57,40 @@ file: t2_4.c
 8) result ^ exponenta
 9) return result with sign
 ## Problem 5
-file: t2_5.c
+file: [t2_5.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_5.c)
+### structs
+DynamicArray
+	char* data  
+	int size  
+	int capacity  
+node
+    DynamicArray* data  
+    struct node* next  
 ### functions
 #### dynamic array functions
+1) void initDA(DynamicArray \*arr, int capacity)
+2) void appendDA(DynamicArray \*arr, char value)
+3) void deleteDA(DynamicArray* arr)
+4) void printDA(DynamicArray* arr)
 #### singly linked list functions
+1) void printDA(DynamicArray* arr)
+2) void deleteL(node \*lst)
+3) void printL(node \*lst)
+4) void deleteSameAsLast(node \*\*lst)
+### interface
+input: A string of words separated by spaces
+output: A singly linked list with words matching the last one deleted
 ## Problem 6
-file: t2_6.c
+file: [t2_6.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_6.c)
+## Problem 7
+file: [t2_7.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_7.c)
+New grammar:
+```EBNF
+<expr>::=<add>{+ <add>}{- <add>}
+<add>::=<mult>{* <mult>}{/ <mult>}
+<mult>::=<pow>|<pow> ^ <mult>
+<pow>::=0|1|2|3|4|5|6|7|8|9|(<expr>)
+```
+### interface
+input: /<expr/>
+output: result of this epression
