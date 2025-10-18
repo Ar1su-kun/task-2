@@ -82,6 +82,23 @@ input: A string of words separated by spaces
 output: A singly linked list with words matching the last one deleted
 ## Problem 6
 file: [t2_6.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_6.c)
+### structs
+tree
+	int data
+	tree \* left
+	tree \* right
+### functions
+1) void insertToTree(tree\*\* root, int key)
+2) tree\* prevMinInTree(tree* root)
+3) void deleteFromTree(tree** root, int key)
+4) void printTree(tree* root)
+5) void freeTree(tree* root)
+6) int searchInTree(tree* root, int key)
+### interface
+input:
+	+num: add node to tree with key num
+	-num: delete node from tree with key num
+	?num: search for node with key num in tree and print 'yes' if it exists or 'no' if not 
 ## Problem 7
 file: [t2_7.c](https://github.com/Ar1su-kun/CMC-LMSU-tasks-3rd-semester/blob/master/task2/t2_7.c)
 New grammar:
@@ -92,5 +109,5 @@ New grammar:
 <pow>::=0|1|2|3|4|5|6|7|8|9|(<expr>)
 ```
 ### interface
-input: /<expr/>
-output: result of this epression
+input: expression
+output: result of this expression
