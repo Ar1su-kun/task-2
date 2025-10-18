@@ -42,6 +42,18 @@ void printDA(DynamicArray* arr){
         putchar(arr->data[i]);
     }
 }
+int isEqualDA(DynamicArray* a, DynamicArray* b){
+    int i = 0;
+    if (a->size != b->size)
+        return 0;
+    while(i < a->size){
+        if (a->data[i] != b->data[i])
+            return 0;
+        i++;
+    }
+    return 1;
+}
+
 /*=======================List functions=========================*/
 void addToEndL(node **lst, DynamicArray *value){
     node *current = *lst;
@@ -97,7 +109,7 @@ void deleteSameAsLast(node **lst){
 
     node *current = *lst;
     node *prev = NULL;
-    while ((current->next != NULL) && ((*current->data->data) == (*last->data->data)))
+    while ((current->next != NULL) && (isEqualDA((current->data), (last->data))))
     {
         *lst = current->next;
         free(current->data->data); 
@@ -106,7 +118,7 @@ void deleteSameAsLast(node **lst){
         current = *lst;
     }
     while(current->next != NULL){
-        while((current->next != NULL) && ((*current->data->data) != (*last->data->data))){
+        while((current->next != NULL) && (!isEqualDA((current->data), (last->data)))){
             prev = current;
             current = current->next;
         }
@@ -119,7 +131,9 @@ void deleteSameAsLast(node **lst){
      }
 }
 
+
 int main(){
+
     char c;
     node *lst;
     lst = NULL;

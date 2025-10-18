@@ -47,8 +47,9 @@ void insertToTree(tree** root, int key){
 }
 
 tree* prevMinInTree(tree* root){
-    if (root->left->left == NULL) return root;
-    else return prevMinInTree(root->left);
+    if (root->left->left == NULL) 
+        return root;
+    return prevMinInTree(root->left);
 }
 
 void deleteFromTree(tree** root, int key){
@@ -82,11 +83,13 @@ void deleteFromTree(tree** root, int key){
          }
         else if (tmp->left == NULL && tmp->right != NULL){
             tmp->data = tmp->right->data;
+            tmp->left = tmp->right->left;
             free(tmp->right);
             tmp->right = NULL;
         }
         else if (tmp->left != NULL && tmp->right == NULL){
             tmp->data = tmp->left->data;
+            tmp->right = tmp->left->right;
             free(tmp->left);
             tmp->left = NULL;
         }
