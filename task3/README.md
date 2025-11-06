@@ -27,6 +27,6 @@ files: input.c, input.h
 #### public functions
 1) Input(list \*lst);
 #### how it works
-![image](image.png)
+![image](image.jpg)
 ### main
 Use public functions of input and list modules 
