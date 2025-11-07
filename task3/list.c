@@ -4,7 +4,7 @@
 void initList(list *lst){
     lst->size = 0;
     lst->capacity = 0;
-    lst->data = 0;
+    lst->data = NULL;
 }
 
 void initBuffer(buffer *buf){
@@ -28,7 +28,6 @@ void clearList(list *lst){
 void clearBuffer(buffer *buf){
     buf->size = 0;
     buf->capacity = 0;
-    //free(buf->data);
     buf->data = NULL;
 }
 
@@ -46,8 +45,10 @@ void shrinkBuffer(buffer *buf){
 }
 
 void shrinkList(list *lst){
-    lst->data = realloc(lst->data, lst->size * sizeof(lst->data));
-    lst->capacity = lst->size;
+    if(lst->data != NULL){
+        lst->data = realloc(lst->data, lst->size * sizeof(lst->data));
+        lst->capacity = lst->size;
+    }
 }
 
 void addWord(list *lst, buffer *buf){
@@ -60,10 +61,6 @@ void addWord(list *lst, buffer *buf){
 }
 
 void printSize(list *lst){
-    if (lst->data == NULL){
-        printf("Size: 0\n");
-        return;
-    }
     printf("Size: %d\n", lst->size);
 }
 
@@ -73,10 +70,13 @@ void printList(list *lst){
     printf("[");
     for (int i = 0; i < lst->size-1; i++)
         printf("%s, ", lst->data[i]);
-    printf("%s]\n\n", lst->data[lst->size - 1]); 
+    printf("%s]\n", lst->data[lst->size - 1]); 
 }
 
 void sortList(list *lst){
+    if (lst->data == NULL){
+        return;
+    }
     for (int i = 0; i < lst->size-1; i++){
         for (int j = 0; j < lst->size-1; j++){
             if(strcmp(lst->data[j], lst->data[j + 1]) > 0){
